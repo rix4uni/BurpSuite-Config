@@ -194,6 +194,14 @@
                 "string_replace":"200 OK"
             },
             {
+                "comment":"400 Bad Request",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_header",
+                "string_match":"400 Bad Request",
+                "string_replace":"200 OK"
+            },
+            {
                 "comment":"401 Unauthorized",
                 "enabled":true,
                 "is_simple_match":false,
@@ -206,8 +214,88 @@
                 "enabled":true,
                 "is_simple_match":false,
                 "rule_type":"response_body",
-                "string_match":"\":false,",
-                "string_replace":"\":true,"
+                "string_match":"\":false",
+                "string_replace":"\":true"
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"status\":1",
+                "string_replace":"\"status\":0"
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"code\":\"invalid\"",
+                "string_replace":"\"code\":\"valid\""
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"status\":401",
+                "string_replace":"\"status\":200"
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"status\":400",
+                "string_replace":"\"status\":200"
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"code\":404",
+                "string_replace":"\"code\":200"
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"message\":\"Please enter the valid OTP\"",
+                "string_replace":"\"message\":\"valid OTP\""
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":":\"INVALID\"",
+                "string_replace":":\"VERIFIED\""
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"Invalid OTP.\"",
+                "string_replace":"\"\""
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"response\":\"invalid code\"",
+                "string_replace":"\"response\":\"success\""
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"error\":\"Invalid code\"",
+                "string_replace":"\"success\":\"valid code\""
             }
         ]
     }
