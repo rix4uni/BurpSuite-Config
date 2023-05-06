@@ -1,0 +1,45 @@
+{
+    "proxy":{
+        "ssl_pass_through":{
+            "automatically_add_entries_on_client_ssl_negotiation_failure":false,
+            "rules":[
+                {
+                    "enabled":true,
+                    "host":".*\\.google\\.com ",
+                    "protocol":"any"
+                },
+                {
+                    "enabled":true,
+                    "host":".*\\.gstatic\\.com",
+                    "protocol":"any"
+                },
+                {
+                    "enabled":true,
+                    "host":".*\\.mozilla\\.com",
+                    "protocol":"any"
+                },
+                {
+                    "enabled":true,
+                    "host":".*\\.googleapis\\.com",
+                    "protocol":"any"
+                },
+                {
+                    "enabled":true,
+                    "host":".*\\.pki\\.goog",
+                    "protocol":"any"
+                },
+                {
+                    "enabled":true,
+                    "host":"xss.report",
+                    "port":"80",
+                    "protocol":"any"
+                },
+                {
+                    "enabled":true,
+                    "host":".*\\.mozilla\\.org",
+                    "protocol":"any"
+                }
+            ]
+        }
+    }
+}
