@@ -296,6 +296,38 @@
                 "rule_type":"response_body",
                 "string_match":"\"error\":\"Invalid code\"",
                 "string_replace":"\"success\":\"valid code\""
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"CodeNotFound\"",
+                "string_replace":"\"codeverified\""
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"Incorrect Verification Code\"",
+                "string_replace":"\"verified OTP code\""
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":true,
+                "rule_type":"response_body",
+                "string_match":"{\"status\":\"0\"}",
+                "string_replace":"{\"status\":\"1\",\"user_type\":\"admin\"}"
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":true,
+                "rule_type":"request_header",
+                "string_match":"{\"admin\", \"false\", admin_id \"0\"}",
+                "string_replace":"{\"admin\", \"true\", admin_id \"1\"}"
             }
         ]
     }
