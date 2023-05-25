@@ -30,12 +30,6 @@
                 },
                 {
                     "enabled":true,
-                    "host":"xss.report",
-                    "port":"80",
-                    "protocol":"any"
-                },
-                {
-                    "enabled":true,
                     "host":".*\\.mozilla\\.org",
                     "protocol":"any"
                 }
