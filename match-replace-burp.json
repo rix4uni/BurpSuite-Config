@@ -328,6 +328,22 @@
                 "rule_type":"request_header",
                 "string_match":"{\"admin\", \"false\", admin_id \"0\"}",
                 "string_replace":"{\"admin\", \"true\", admin_id \"1\"}"
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"verify\":false",
+                "string_replace":"\"verify\":true"
+            },
+            {
+                "comment":"Response Manipulation",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"response_body",
+                "string_match":"\"email_verified\":false",
+                "string_replace":"\"email_verified\":true"
             }
         ]
     }
